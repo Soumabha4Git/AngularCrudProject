@@ -1,0 +1,47 @@
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+       <div class="col-10 col-md-8 col-lg-6">
+          <form #updateCourseForm="ngForm" (ngSubmit)="submitForm(updateCourseForm)"> 
+             <h2>Edit the Courses</h2>
+             <p class="description">Form to edit courses and View it</p>                  
+             <table class="table table-sm table-dark">
+                <thead>
+                   <tr>
+                      <th scope="col">Label</th>
+                      <th scope="col">Value</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>Id</td>
+                      <td><input type="text" name="id" id="id" [(ngModel)]='id' class="form-control" readonly/></td>
+                   </tr>
+                   <tr>
+                      <td>Course Name</td>
+                      <td><input type="text" name="courseName" id="courseName" [(ngModel)]='courseName' class="form-control" /></td>
+                   </tr>
+                   <tr>
+                      <td>Rating</td>
+                      <td><input type="text" name="rating" id="rating" [(ngModel)]='rating' class="form-control" /></td>
+                   </tr>                        
+                   <tr>
+                      <td>Price</td>
+                      <td><input type="text" name="price" id="price" [(ngModel)]='price' class="form-control" /></td>
+                   </tr>                        
+                   <tr>
+                      <td>Trainer Name</td>
+                      <td><input type="text" name="trainerName" id="trainerName" [(ngModel)]='trainerName' class="form-control" /></td>
+                   </tr>                        
+                   <tr>
+                      <td>Number of Days</td>
+                      <td><input type="text" name="numberOfDays" id="numberOfDays" [(ngModel)]='numberOfDays' class="form-control" /></td>
+                   </tr>                        
+                   <tr>
+                      <td scope="col" colspan="2" style="text-align:center"><button type="submit" class="btn btn-primary">Submit</button></td>
+                   </tr>                        
+                </tbody>
+             </table>
+          </form>                           
+       </div>
+    </div>
+ </div>
