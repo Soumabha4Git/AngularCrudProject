@@ -1,0 +1,77 @@
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------- Steps for creating CRUD screen in Angular ------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+1. 	Install Angular CLI 
+2. 	Create Angular CLI project 
+3. 	Execute Angular CLI project to verify everything is fine
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+4. 	Create additional components needed for the project 
+	Here NavBar , CreateUpdate Component , List Component  , Update Component , Delete Component and Confirm Component 
+5. 	Make their entries in App Component ( App.Module.ts ) 
+	Meaning entries for NavBar , List , CreateUpdate Component Update Component , Delete Component and Confirm Component 
+6. 	Import BrowserModule,RouterModule,Routes and HttpClientModule from Angular in App Component ( App.Module.ts ) 
+7. 	Set the path of NavBar , CreateUpdate and List Component in Routes
+	Here the code is written for slash which URL goes to which component 
+8. 	Add the NavBar tag and Router-Outlet in App Component ( App.Component.Html ) 
+9. 	Create a class (DB Table representation) for which CRUD operation will be performed through CLI command 
+	Here the class is Course Class
+10. 	Create 2 service components (for the above class) through CLI command 
+	Here the service component names are CourseService & DataService and they would be under Shared Folder
+11. 	The Service component should have HttpClient object making call to REST API 
+	Here the service component name is course.service.ts and has separate method of all rest api ( like get , post , put and delete ) 
+12. 	The Service component should have HttpClient object making call to REST API 
+	Here the service component name is course.service.ts and has separate method of all rest api ( like get , post , put and delete ) 
+12. 	Add the NavBar HTML content to the NavBar component ( NavBar.Component.Html )
+13. 	Add the List HTML content to the List component ( List.Component.Html )
+14. 	Call the method of Service Component from List Component 
+	Here the wrapper method of Get Rest API method inside List.Component.Ts
+	The wrapper function uses Subscribe method which returns an array of Objects
+15.  	Refer the dynamic content from TS to HTML component of List
+	Here *ng directive used to loop through an array of Objects returned 
+16.     Add a Submit Function to the click event by passing object ( as course ) 
+	Here there are 2 click function , one for Edit and other for Remove in List.Component.Html
+17.     From the Update Function of the EDIT Button , pass the Object ( here Course Object ) from HTML to TS component ( List Component ) 
+18.     Prepare a JSON object from Course Object in TS List component
+19.     Send the JSON object through the service component named as  DataService
+20.     Pass the Header and Paragraph name for the next HTML file after clicking the EDIT button through service component named as DataService
+21. 	Navigate to next HTML page by providing the URL to the navigate function of the router class 
+22. 	Make an entry for new HTML page ( Update Component ) in app module for Router class
+23.     The Update Component has an HTML form with textboxes with values populated from TS files through ngModel feature 
+24.	The ngModel ID values with textboxes populate from the service component named as DataService
+25.	The SUBMIT Button of the Update HTML (of Update Component) routes it to Confirm HTML (of HTML Component)   
+26.	The Submit function of the Submit Button passes the Course JSon Value and Header & Paragraph value to Next Page
+27.	The Confirm Component has an HTML form with textboxes with values populated from TS files through ngModel feature 
+28.	The ngModel ID values with textboxes populate from the service component named as DataService
+29.	The SUBMIT Button of the Confirm HTML (of Confirm Component) executes the service component named as CourseService
+	to execute the PUT method before routing it to List HTML (of List Component)
+30.     From the Delete Function of the REMOVE Button , pass the Object ( here Course Object ) from HTML to TS component ( List Component ) 
+31.     Prepare a JSON object from Course Object in TS List component
+32.     Send the JSON object through the service component named as  DataService
+33.     Pass the Header and Paragraph name for the next HTML file after clicking the REMOVE button through service component named as DataService
+34. 	Navigate to next HTML page by providing the URL to the navigate function of the router class 
+35. 	Make an entry for new HTML page ( Delete Component ) in app module for Router class
+36.     The Delete Component has an HTML form with textboxes with values populated from TS files through ngModel feature 
+37.	The ngModel ID values with textboxes populate from the service component named as DataService
+38.	The SUBMIT Button of the Delete HTML (of Delete Component) routes it to Confirm HTML (of HTML Component)   
+39.	The Submit function of the Submit Button passes the Course JSon Value and Header & Paragraph value to Next Page
+40.	The Confirm Component has an HTML form with textboxes with values populated from TS files through ngModel feature 
+41.	The ngModel ID values with textboxes populate from the service component named as DataService
+42.	The SUBMIT Button of the Confirm HTML (of Confirm Component) executes the service component named as CourseService
+	to execute the DELETE method before routing it to List HTML (of List Component)
+43.     Clicking on the Add Courses Navigar Bar , routes a CreateUpdate HTML page (of CreateUpdate Component)
+44.	Fill up the textboxes of the form for CreateUpdate HTML page (of CreateUpdate Component)	
+45,	From the SubmitForm Function of the SUBMIT Button , , pass the Object ( here Course Object ) from HTML to TS component ( CreateUpdate Component ) 
+31.     Prepare a JSON object from Course Object in TS CreateUpdate component
+32.     Send the JSON object through the service component named as  DataService
+33.     Pass the Header and Paragraph name for the next HTML file after clicking the SUBMIT button through service component named as DataService
+34. 	Navigate to next HTML page by providing the URL to the navigate function of the router class 
+35. 	Make an entry for new HTML page ( CreateUpdate Component ) in app module for Router class
+36.     The CreateUpdate Component has an HTML form with textboxes with values populated from TS files through ngModel feature 
+37.	The ngModel ID values with textboxes populate from the service component named as DataService
+38.	The SUBMIT Button of the CreateUpdate HTML (of CreateUpdate Component) routes it to Confirm HTML (of HTML Component)   
+39.	The Submit function of the Submit Button passes the Course JSon Value and Header & Paragraph value to Next Page
+40.	The Confirm Component has an HTML form with textboxes with values populated from TS files through ngModel feature 
+41.	The ngModel ID values with textboxes populate from the service component named as DataService
+42.	The SUBMIT Button of the Confirm HTML (of Confirm Component) executes the service component named as CourseService
+	to execute the POST method before routing it to List HTML (of List Component)
